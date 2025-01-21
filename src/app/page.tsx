@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { beers } from "../data/beverages";
 
 export default function Home() {
@@ -9,11 +10,6 @@ export default function Home() {
         {beers.map((beer: Beverage, index: number) => (
           <div key={index} className="bg-white shadow-lg rounded-lg p-4">
             {/* Imagem da cerveja */}
-            <img
-              src={`/images/${beer.image}`}
-              alt={beer.name}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
 
             {/* Nome da cerveja */}
             <h2 className="text-xl font-semibold">{beer.name}</h2>
@@ -36,7 +32,7 @@ export default function Home() {
               <h3 className="font-semibold">Tamanhos disponíveis:</h3>
               {beer.available_sizes.map((size, idx) => (
                 <div key={idx} className="flex items-center">
-                  <img
+                  <Image
                     src={`/images/${size.image}`}
                     alt={`${beer.name} ${size.volume}`}
                     className="w-12 h-12 object-cover mr-2"
@@ -52,7 +48,7 @@ export default function Home() {
               <ul>
                 {beer.ingredients.map((ingredient, idx) => (
                   <li key={idx} className="flex items-center">
-                    <img
+                    <Image
                       src={`/images/${ingredient.icon}`}
                       alt={ingredient.name}
                       className="w-6 h-6 mr-2"
@@ -68,7 +64,7 @@ export default function Home() {
               <h3 className="font-semibold">Notas de Degustação:</h3>
               {beer.tasting_notes.map((note, idx) => (
                 <div key={idx} className="flex items-center">
-                  <img
+                  <Image
                     src={`/images/${note.icon}`}
                     alt={note.name}
                     className="w-6 h-6 mr-2"
@@ -83,7 +79,7 @@ export default function Home() {
               <h3 className="font-semibold">Harmonização:</h3>
               {beer.pairing.map((pair, idx) => (
                 <div key={idx} className="flex items-center">
-                  <img
+                  <Image
                     src={`/images/${pair.icon}`}
                     alt={pair.name}
                     className="w-6 h-6 mr-2"
@@ -98,7 +94,7 @@ export default function Home() {
               <h3 className="font-semibold">Copo Ideal:</h3>
               {beer.ideal_glass.map((glass, idx) => (
                 <div key={idx} className="flex items-center">
-                  <img
+                  <Image
                     src={`/images/${glass.icon}`}
                     alt={glass.name}
                     className="w-6 h-6 mr-2"

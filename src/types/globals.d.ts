@@ -10,7 +10,7 @@ interface Beverage {
   nutrients: {
     icon: string;
     name: string;
-    value: string;
+    amount: string;
   }[];
   ingredients: {
     icon: string;
@@ -32,5 +32,4 @@ interface Beverage {
     icon: string;
     name: string;
   }[];
-  image: string;
 }

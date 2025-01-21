@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Beverage {
+  id              Int               @id @default(autoincrement())
+  name            String
+  canType        String
+  availableSizes  AvailableSize[]
+  bitterness      String
+  alcoholContent  String
+  nutrients       Nutrient[]
+  ingredients     Ingredient[]
+  origin          Origin[]
+  tastingNotes    TastingNote[]
+  pairing         Pairing[]
+  idealGlass      IdealGlass[]
+}
+
+model AvailableSize {
+  id         Int      @id @default(autoincrement())
+  image      String
+  volume     String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}
+
+model Nutrient {
+  id         Int      @id @default(autoincrement())
+  icon       String
+  name       String
+  amount     String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}
+
+model Ingredient {
+  id         Int      @id @default(autoincrement())
+  icon       String
+  name       String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}
+
+model Origin {
+  id         Int      @id @default(autoincrement())
+  icon       String
+  name       String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}
+
+model TastingNote {
+  id         Int      @id @default(autoincrement())
+  icon       String
+  name       String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}
+
+model Pairing {
+  id         Int      @id @default(autoincrement())
+  icon       String
+  name       String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}
+
+model IdealGlass {
+  id         Int      @id @default(autoincrement())
+  icon       String
+  name       String
+  beverageId Int
+  beverage   Beverage @relation(fields: [beverageId], references: [id])
+}

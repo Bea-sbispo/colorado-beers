@@ -4,19 +4,19 @@ export const beers: Beverage[] = [
     can_type: "Lata Sleek",
     available_sizes: [
       {
-        image: "Ribeirao_Lager_Lata_Sleek_350ml.png",
+        image: "Ribeirao_Lager_350ml.png",
         volume: "350ml",
       },
       {
-        image: "Ribeirao_Lager_Lata_Sleek_355ml.png",
+        image: "Ribeirao_Lager_355ml.png",
         volume: "355ml",
       },
       {
-        image: "Ribeirao_Lager_Lata_Sleek_410ml.png",
+        image: "Ribeirao_Lager_410ml.png",
         volume: "410ml",
       },
       {
-        image: "Ribeirao_Lager_Lata_Sleek_600ml.png",
+        image: "Ribeirao_Lager_600ml.png",
         volume: "600ml",
       },
     ],
@@ -26,12 +26,12 @@ export const beers: Beverage[] = [
       {
         icon: "carbs_icon.png",
         name: "Carbs",
-        value: "8.5 g / 200ml",
+        amount: "8.5 g / 200ml",
       },
       {
         icon: "calories_icon.png",
         name: "Calories",
-        value: "49.24 kcal / 200ml",
+        amount: "49.24 kcal / 200ml",
       },
     ],
     ingredients: [
@@ -84,22 +84,21 @@ export const beers: Beverage[] = [
         name: "Lager Glass",
       },
     ],
-    image: "Ribeirao_Lager.png",
   },
   {
     name: "Appia",
     can_type: "Lata Sleek",
     available_sizes: [
       {
-        image: "Appia_Lata_Sleek_350ml.png",
+        image: "Appia_350ml.png",
         volume: "350ml",
       },
       {
-        image: "Appia_Lata_Sleek_410ml.png",
+        image: "Appia_410ml.png",
         volume: "410ml",
       },
       {
-        image: "Appia_Lata_Sleek_600ml.png",
+        image: "Appia_600ml.png",
         volume: "600ml",
       },
     ],
@@ -109,12 +108,12 @@ export const beers: Beverage[] = [
       {
         icon: "carbs_icon.png",
         name: "Carbs",
-        value: "8.5 g / 200ml",
+        amount: "8.5 g / 200ml",
       },
       {
         icon: "calories_icon.png",
         name: "Calories",
-        value: "49.24 kcal / 200ml",
+        amount: "49.24 kcal / 200ml",
       },
     ],
     ingredients: [
@@ -179,18 +178,17 @@ export const beers: Beverage[] = [
         name: "Weizen Glass",
       },
     ],
-    image: "Appia.png",
   },
   {
     name: "Kuyá",
     can_type: "Lata Sleek",
     available_sizes: [
       {
-        image: "Kuya_Lata_Sleek_350ml.png",
+        image: "Kuya_350ml.png",
         volume: "350ml",
       },
       {
-        image: "Kuya_Lata_Sleek_600ml.png",
+        image: "Kuya_600ml.png",
         volume: "600ml",
       },
     ],
@@ -200,12 +198,12 @@ export const beers: Beverage[] = [
       {
         icon: "carbs_icon.png",
         name: "Carbs",
-        value: "5.4 g / 200ml",
+        amount: "5.4 g / 200ml",
       },
       {
         icon: "calories_icon.png",
         name: "Calories",
-        value: "34.8 kcal / 200ml",
+        amount: "34.8 kcal / 200ml",
       },
     ],
     ingredients: [
@@ -258,7 +256,6 @@ export const beers: Beverage[] = [
         name: "Caldereta Glass",
       },
     ],
-    image: "Kuya.png",
   },
   {
     name: "Cauim",
@@ -275,12 +272,12 @@ export const beers: Beverage[] = [
       {
         icon: "carbs_icon.png",
         name: "Carbs",
-        value: "8.5 g / 200ml",
+        amount: "8.5 g / 200ml",
       },
       {
         icon: "calories_icon.png",
         name: "Calories",
-        value: "49.24 kcal / 200ml",
+        amount: "49.24 kcal / 200ml",
       },
     ],
     ingredients: [
@@ -337,18 +334,17 @@ export const beers: Beverage[] = [
         name: "Lager Glass",
       },
     ],
-    image: "Cauim.png",
   },
   {
     name: "Indica",
     can_type: "Lata Sleek",
     available_sizes: [
       {
-        image: "Indica_Lata_Sleek_350ml.png",
+        image: "Indica_350ml.png",
         volume: "350ml",
       },
       {
-        image: "Indica_Lata_Sleek_600ml.png",
+        image: "Indica_600ml.png",
         volume: "600ml",
       },
     ],
@@ -358,12 +354,12 @@ export const beers: Beverage[] = [
       {
         icon: "carbs_icon.png",
         name: "Carbs",
-        value: "10.9 g / 100ml",
+        amount: "10.9 g / 100ml",
       },
       {
         icon: "calories_icon.png",
         name: "Calories",
-        value: "58.64 kcal / 100ml",
+        amount: "58.64 kcal / 100ml",
       },
     ],
     ingredients: [
@@ -420,7 +416,6 @@ export const beers: Beverage[] = [
         name: "Caldereta Glass",
       },
     ],
-    image: "Indica.png",
   },
   {
     name: "Demoiselle",
@@ -437,12 +432,12 @@ export const beers: Beverage[] = [
       {
         icon: "carbs_icon.png",
         name: "Carbs",
-        value: "10.9 g / 200ml",
+        amount: "10.9 g / 200ml",
       },
       {
         icon: "calories_icon.png",
         name: "Calories",
-        value: "58.64 kcal / 200ml",
+        amount: "58.64 kcal / 200ml",
       },
     ],
     ingredients: [
@@ -495,6 +490,5 @@ export const beers: Beverage[] = [
         name: "Caldereta Glass",
       },
     ],
-    image: "Demoiselle.png",
   },
 ];
