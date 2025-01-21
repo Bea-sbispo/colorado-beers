@@ -8,18 +8,18 @@ datasource db {
 }
 
 model Beverage {
-  id              Int               @id @default(autoincrement())
-  name            String
+  id             Int                    @id @default(autoincrement())
+  name           String
   canType        String
-  availableSizes  AvailableSize[]
-  bitterness      String
-  alcoholContent  String
-  nutrients       Nutrient[]
-  ingredients     Ingredient[]
-  origin          Origin[]
-  tastingNotes    TastingNote[]
-  pairing         Pairing[]
-  idealGlass      IdealGlass[]
+  availableSizes AvailableSize[]
+  bitterness     String
+  alcoholContent String
+  nutrients      NutrientsBeverage[]
+  ingredients    IngredientsBeverage[]
+  origin         OriginsBeverage[]
+  tastingNotes   TastingNotesBeverage[]
+  pairing        PairingsBeverage[]
+  idealGlass     IdealGlassBeverage[]
 }
 
 model AvailableSize {
@@ -31,50 +31,92 @@ model AvailableSize {
 }
 
 model Nutrient {
+  id                Int                 @id @default(autoincrement())
+  icon              String
+  name              String
+  NutrientsBeverage NutrientsBeverage[]
+}
+
+model NutrientsBeverage {
   id         Int      @id @default(autoincrement())
-  icon       String
-  name       String
-  amount     String
+  nutrientId Int
   beverageId Int
+  amount     String
+  nutrient   Nutrient @relation(fields: [nutrientId], references: [id])
   beverage   Beverage @relation(fields: [beverageId], references: [id])
 }
 
 model Ingredient {
-  id         Int      @id @default(autoincrement())
-  icon       String
-  name       String
-  beverageId Int
-  beverage   Beverage @relation(fields: [beverageId], references: [id])
+  id                  Int                   @id @default(autoincrement())
+  icon                String
+  name                String
+  IngredientsBeverage IngredientsBeverage[]
+}
+
+model IngredientsBeverage {
+  id           Int        @id @default(autoincrement())
+  ingredientId Int
+  beverageId   Int
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+  beverage     Beverage   @relation(fields: [beverageId], references: [id])
 }
 
 model Origin {
+  id              Int               @id @default(autoincrement())
+  icon            String
+  name            String
+  OriginsBeverage OriginsBeverage[]
+}
+
+model OriginsBeverage {
   id         Int      @id @default(autoincrement())
-  icon       String
-  name       String
+  originId   Int
   beverageId Int
+  origin     Origin   @relation(fields: [originId], references: [id])
   beverage   Beverage @relation(fields: [beverageId], references: [id])
 }
 
 model TastingNote {
-  id         Int      @id @default(autoincrement())
-  icon       String
-  name       String
-  beverageId Int
-  beverage   Beverage @relation(fields: [beverageId], references: [id])
+  id                   Int                    @id @default(autoincrement())
+  icon                 String
+  name                 String
+  TastingNotesBeverage TastingNotesBeverage[]
+}
+
+model TastingNotesBeverage {
+  id            Int         @id @default(autoincrement())
+  tastingNoteId Int
+  beverageId    Int
+  tastingNote   TastingNote @relation(fields: [tastingNoteId], references: [id])
+  beverage      Beverage    @relation(fields: [beverageId], references: [id])
 }
 
 model Pairing {
+  id               Int                @id @default(autoincrement())
+  icon             String
+  name             String
+  PairingsBeverage PairingsBeverage[]
+}
+
+model PairingsBeverage {
   id         Int      @id @default(autoincrement())
-  icon       String
-  name       String
+  pairingId  Int
   beverageId Int
+  pairing    Pairing  @relation(fields: [pairingId], references: [id])
   beverage   Beverage @relation(fields: [beverageId], references: [id])
 }
 
 model IdealGlass {
-  id         Int      @id @default(autoincrement())
-  icon       String
-  name       String
-  beverageId Int
-  beverage   Beverage @relation(fields: [beverageId], references: [id])
+  id                 Int                  @id @default(autoincrement())
+  icon               String
+  name               String
+  IdealGlassBeverage IdealGlassBeverage[]
+}
+
+model IdealGlassBeverage {
+  id           Int        @id @default(autoincrement())
+  idealGlassId Int
+  beverageId   Int
+  idealGlass   IdealGlass @relation(fields: [idealGlassId], references: [id])
+  beverage     Beverage   @relation(fields: [beverageId], references: [id])
 }
