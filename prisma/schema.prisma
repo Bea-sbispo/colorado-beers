@@ -14,6 +14,7 @@ model Beverage {
   availableSizes AvailableSize[]
   bitterness     String
   alcoholContent String
+  mainColor      String @default("#FFD700")
   nutrients      NutrientsBeverage[]
   ingredients    IngredientsBeverage[]
   origin         OriginsBeverage[]
@@ -21,6 +22,7 @@ model Beverage {
   pairing        PairingsBeverage[]
   idealGlass     IdealGlassBeverage[]
 }
+
 
 model AvailableSize {
   id         Int      @id @default(autoincrement())
